@@ -1,6 +1,9 @@
 import songs from '../songs.json';
+import  MeiliSearch  from 'meilisearch';
 
 const PER_PAGE = 15;
+const client = new MeiliSearch({ host: 'http://127.0.0.1:7700' })
+const index = client.getIndex('songs')
 
 export default {
   Query: {
@@ -9,11 +12,10 @@ export default {
       const offsetEnd = offsetStart + PER_PAGE;
 
       const matchingSongs = search
-        ? songs.filter(song =>
-            ['track_name', 'track_artist', 'track_album_name'].find(field =>
-              (song[field] || '').toLowerCase().includes(search.toLowerCase())
-            )
-          )
+        ? await index.search(search)
+                  .then(res =>{  
+                    return  res['hits']
+                  })
         : songs;
 
       return {
@@ -21,7 +23,8 @@ export default {
         pageInfo: {
           per_page: PER_PAGE,
           total: matchingSongs.length,
-          has_more: offsetEnd < matchingSongs.length
+          has_more: offsetEnd < matchingSongs.length,
+          current_page: page
         }
       };
     }

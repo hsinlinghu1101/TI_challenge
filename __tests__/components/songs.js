@@ -116,7 +116,7 @@ test('renders songs', async () => {
         class="row row-cols-1 row-cols-sm-3 row-cols-lg-5 g-3"
       >
         <div
-          class="col d-flex align-items-stretch"
+          class="col card-group"
         >
           <div
             class="card shadow-sm"
@@ -129,20 +129,41 @@ test('renders songs', async () => {
               >
                 Never Gonna Give You Up
               </p>
-              <div
-                class="d-flex justify-content-between align-items-center"
+              <p
+                class="card-text d-flex justify-content-between flex-wrap"
               >
                 <small
-                  class="text-muted"
+                  class="text-muted "
                 >
                   Rick Astley
                 </small>
-              </div>
+                <small>
+                  <small
+                    class="align-self-start text-white bg-success rounded px-2 py-1 fw-bold "
+                  >
+                    Danceable!
+                  </small>
+                </small>
+              </p>
             </div>
+            <ul
+              class="list-group list-group-flush"
+            >
+              <li
+                class="fw-light text-capitalize list-group-item"
+              >
+                pop
+              </li>
+              <li
+                class="fw-light text-capitalize list-group-item"
+              >
+                electropop
+              </li>
+            </ul>
           </div>
         </div>
         <div
-          class="col d-flex align-items-stretch"
+          class="col card-group"
         >
           <div
             class="card shadow-sm"
@@ -155,20 +176,41 @@ test('renders songs', async () => {
               >
                 Never Gonna Give You Up
               </p>
-              <div
-                class="d-flex justify-content-between align-items-center"
+              <p
+                class="card-text d-flex justify-content-between flex-wrap"
               >
                 <small
-                  class="text-muted"
+                  class="text-muted "
                 >
                   Mac Beez
                 </small>
-              </div>
+                <small>
+                  <small
+                    class="align-self-start text-white bg-success rounded px-2 py-1 fw-bold "
+                  >
+                    Danceable!
+                  </small>
+                </small>
+              </p>
             </div>
+            <ul
+              class="list-group list-group-flush"
+            >
+              <li
+                class="fw-light text-capitalize list-group-item"
+              >
+                latin
+              </li>
+              <li
+                class="fw-light text-capitalize list-group-item"
+              >
+                tropical
+              </li>
+            </ul>
           </div>
         </div>
         <div
-          class="col d-flex align-items-stretch"
+          class="col card-group"
         >
           <div
             class="card shadow-sm"
@@ -181,16 +223,31 @@ test('renders songs', async () => {
               >
                 Never Gonna Give You Up
               </p>
-              <div
-                class="d-flex justify-content-between align-items-center"
+              <p
+                class="card-text d-flex justify-content-between flex-wrap"
               >
                 <small
-                  class="text-muted"
+                  class="text-muted "
                 >
                   The Black Keys
                 </small>
-              </div>
+                <small />
+              </p>
             </div>
+            <ul
+              class="list-group list-group-flush"
+            >
+              <li
+                class="fw-light text-capitalize list-group-item"
+              >
+                r&b
+              </li>
+              <li
+                class="fw-light text-capitalize list-group-item"
+              >
+                neo soul
+              </li>
+            </ul>
           </div>
         </div>
       </div>

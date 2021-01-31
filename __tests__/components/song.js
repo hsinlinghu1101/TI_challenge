@@ -18,7 +18,7 @@ test('renders a song', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <div
-        class="col d-flex align-items-stretch"
+        class="col card-group"
       >
         <div
           class="card shadow-sm"
@@ -53,16 +53,20 @@ test('renders a song', () => {
             >
               Never Gonna Give You Up
             </p>
-            <div
-              class="d-flex justify-content-between align-items-center"
+            <p
+              class="card-text d-flex justify-content-between flex-wrap"
             >
               <small
-                class="text-muted"
+                class="text-muted "
               >
                 Rick Astley
               </small>
-            </div>
+              <small />
+            </p>
           </div>
+          <ul
+            class="list-group list-group-flush"
+          />
         </div>
       </div>
     </div>
