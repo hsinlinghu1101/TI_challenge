@@ -1,4 +1,38 @@
 Populate this file with the steps you took to get MeiliSearch up and running!
 
-$ docker ...
-$ curl ...
+$ docker run -it --rm \
+>     -p 7700:7700 \
+>     -v $(pwd)/data.ms:/data.ms \
+>     getmeili/meilisearch
+
+888b     d888          d8b 888 d8b  .d8888b.                                    888
+8888b   d8888          Y8P 888 Y8P d88P  Y88b                                   888
+88888b.d88888              888     Y88b.                                        888
+888Y88888P888  .d88b.  888 888 888  "Y888b.    .d88b.   8888b.  888d888 .d8888b 88888b.
+888 Y888P 888 d8P  Y8b 888 888 888     "Y88b. d8P  Y8b     "88b 888P"  d88P"    888 "88b
+888  Y8P  888 88888888 888 888 888       "888 88888888 .d888888 888    888      888  888
+888   "   888 Y8b.     888 888 888 Y88b  d88P Y8b.     888  888 888    Y88b.    888  888
+888       888  "Y8888  888 888 888  "Y8888P"   "Y8888  "Y888888 888     "Y8888P 888  888
+
+Database path:          "./data.ms"
+Server listening on:    "0.0.0.0:7700"
+Environment:            "development"
+Commit SHA:             "UNKNOWN"
+Build date:             "2021-01-14T13:57:52.455292581+00:00"
+Package version:        "0.18.1"
+Sentry DSN:             "https://5ddfa22b95f241198be2271aaf028653@sentry.io/3060337"
+Amplitude Analytics:    "Enabled"
+
+No master key found; The server will accept unidentified requests. If you need some protection in development mode, please export a key: export MEILI_MASTER_KEY=xxx
+
+Documentation:          https://docs.meilisearch.com
+Source code:            https://github.com/meilisearch/meilisearch
+Contact:                https://docs.meilisearch.com/resources/contact.html or bonjour@meilisearch.com
+
+[2021-01-29T00:20:40Z INFO  actix_server::builder] Starting 12 workers
+[2021-01-29T00:20:41Z INFO  ureq::unit] sending request POST https://api.amplitude.com/httpapi
+[2021-01-29T00:20:41Z INFO  actix_server::builder] Starting "actix-web-service-0.0.0.0:7700" service on 0.0.0.0:7..
+$  curl \
+  -X POST 'http://127.0.0.1:7700/indexes/songs/documents' \
+  --data @songs.json
+{"updateId":0}

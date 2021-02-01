@@ -12,7 +12,9 @@ export default function Header({ initialSearch, performSearch }) {
           <form
             onSubmit={e => {
               e.preventDefault();
-              performSearch(search);
+              setSearch(search)
+              let new_search = encodeURIComponent(search)
+              performSearch(new_search);
             }}>
             <div className="input-group">
               <input
@@ -20,6 +22,8 @@ export default function Header({ initialSearch, performSearch }) {
                 onChange={e => {
                   e.preventDefault();
                   setSearch(e.target.value);
+                  let words = encodeURIComponent(e.target.value)
+                  performSearch(words)
                 }}
                 type="text"
                 className="form-control"

@@ -86,7 +86,7 @@ export default function Songs({ page, search }) {
 }
 
 function Pagination({ pageInfo, search }) {
-  const currentPage = pageInfo.currentPage || 1;
+  const currentPage = pageInfo.current_page || 1;
 
   return (
     <nav aria-label="Page navigation">
